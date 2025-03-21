@@ -13,23 +13,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body id="body">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="navbar">
             <a class="active" href="/index.html">Home</a>
             <a id="aboutButton">About Me</a>
-            <div class="dropdown">
-                <!-- TODO: implement the ability to click on "projects" and go to projects :)-->
-                <button class="dropbtn">Projects
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="projects/miningrig.html">Mining Rig</a>
-                    <a href="projects/linguistics.html">Linguistics</a>
-                </div>
-            </div>
+            <a id="projectsButton">Projects</a>
         </div>
         <div class="titleBox">
             <div class="titleText">
@@ -49,6 +40,26 @@
         </div>
         <div id="about">
             <h1>About Me</h1>
+            <p style="font-size: 15pt;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam soluta dolor obcaecati totam numquam iusto, aliquid molestiae est consequuntur fugiat suscipit sit, eveniet neque inventore quisquam. Architecto dicta culpa minus!</p>
+        </div>
+
+        <div id="projects">
+            <h1>Projects</h1>
+            <div id="projectsBar">
+                <!-- I want this to be a bar that has two 
+                     rightmost rounded buttons that swap the 
+                     content of projectContent to be each project.
+                 -->
+                <ul class="rightBar">
+                    <li><a class="dark" id="miningRig">Mining Rig</a></li>
+                    <li><a class="dark" id="linguistics">Linguistics</a></li>
+
+                </ul>
+                
+            </div>
+            <div id="projectContent">
+                <p id="projectText"></p>
+            </div>
         </div>
         
 

@@ -1,4 +1,7 @@
+const body = document.getElementById("body");
 const aboutMe = document.getElementById("aboutButton");
+const projects = document.getElementById("projectsButton");
+projects.onclick = function () { scrollTo("projects") }
 aboutMe.onclick = function() { scrollTo("about") };
 
 function scrollTo(section) {
@@ -10,7 +13,9 @@ function scrollTo(section) {
     }
 }
 
-const words = ["Computer Science Student", "Penetration Tester"];
+
+// TYPING WORDS EFFECT
+const words = ["Computer Science Student", "Penetration Tester", "Developer"];
 
 // word <p> tag 
 let wordTag = document.getElementById("word");
@@ -38,7 +43,7 @@ function deleteWord() {
         if (charArr.length > 0) {
             charArr.pop(); //pop off last letter
             wordTag.innerHTML = charArr.join(""); //rewrite the text
-            setTimeout(deleteLetter, delay);
+            setTimeout(deleteLetter, delay / 2);
         }
         else {
             currentWord = (currentWord + 1) % words.length; //increment currentWord
@@ -49,5 +54,35 @@ function deleteWord() {
     deleteLetter(); //start deleting
     
 }
+typeWord(); //kick off the typing loop!
 
-typeWord();
+// PROJECT TEXT SWAPPING
+const miningRigButton = document.getElementById("miningRig");
+const linguisticsButton = document.getElementById("linguistics");
+
+let activeButton = linguisticsButton;
+let projectText = document.getElementById("projectText");
+function swapProjectText(name) {
+    //remove active class
+    activeButton.classList.remove("active");
+    switch (name) {
+        case "linguistics":
+            projectText.innerHTML = "In may of whatever i did this camp";
+            linguisticsButton.classList.add("active");
+            activeButton = linguisticsButton;
+            break;
+        case "miningRig":
+            projectText.innerHTML = "In 2021 i built this big computer :3";
+            miningRigButton.classList.add("active");
+            activeButton = miningRigButton;
+            break;
+        default:
+            console.error(`Error finding project named ${name}`);
+    }
+}
+
+body.onload = function() { swapProjectText("linguistics") }; //set default project text
+
+miningRigButton.onclick = function() { swapProjectText("miningRig"); };
+linguisticsButton.onclick = function() { swapProjectText("linguistics"); };
+
