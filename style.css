@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root {
     --back: #dad7cd;
     --light: #a3b18a;
@@ -7,10 +8,17 @@
 }
 
 body {
-   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-family: "Roboto", sans-serif;
    background-color: var(--primary);
 }
 
+a {
+    cursor: pointer;
+}
+
+.inline {
+    display: inline;
+}
 
 .navbar {
     background-color: var(--back);
@@ -29,7 +37,6 @@ body {
     text-decoration: none;
     text-align: center;
     padding: 14px 16px;
-    cursor: pointer;
 }
 
 /* images in navbar */
@@ -103,4 +110,18 @@ body {
 
 .icons img:hover {
     scale: 125%;
+}
+
+
+#blink {
+    animation: blink 0.65s infinite;
+    padding: 0.1em;
+}
+@keyframes blink {
+    to { opacity: .0; }
+}
+
+.descriptionBox p {
+    font-size: 20pt;
+    display: inline;
 }
