@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800,900&display=swap');
 :root {
-    --back: #dad7cd;
-    --light: #a3b18a;
-    --primary: #588157;
-    --dark: #3a5a40;
-    --veryDark: #344e41;
+    --back: #fff;
+    --light: #bde0fe;
+    --primary: #a2d2ff;
+    --lessDark: #ffc8dd;
+    --dark: #ffafcc;
+    --veryDark: #cdb4db;
 }
 
 body {
-   font-family: "Roboto", sans-serif;
-   background-color: var(--primary);
+   font-family: "Inter", sans-serif;
+   background-color: var(--back);
+   font-weight: 500;
 }
 
 a {
@@ -18,19 +20,23 @@ a {
 
 
 .navbar {
-    background-color: var(--back);
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
 .navbar a.active, .navbar a.active:hover {
-    background-color: var(--light);
+    background-color: var(--dark);
 }
 
 /* Links within navbar */
 .navbar a {
     float: left;
-    font-size: 16px;
-    color: var(--dark);
+    font-size: 16pt;
+    font-weight: 600;
+    color: black;
     text-decoration: none;
     text-align: center;
     padding: 14px 16px;
@@ -44,7 +50,7 @@ a {
 
 /* Hovering over a link in Navbar */
 .navbar a:hover, .dropbtn {
-    background-color: var(--light);
+    background-color: var(--lessDark);
 }
 
 
@@ -52,7 +58,8 @@ a {
 
 .titleBox {
     padding: 10px;
-    background-color: var(--primary);
+    background-color: var(--back);
+    text-align: center;
 }
 .titleText {
     padding: 10px;
@@ -73,26 +80,48 @@ a {
 #blink {
     animation: blink 0.65s infinite;
     padding: 0.1em;
+    font-weight: 100;
 }
 @keyframes blink {
     to { opacity: .0; }
 }
 
+#word {
+    color: var(--primary);
+
+}
+
+#about {
+    margin-left: 20%;
+    max-width: 60%;
+}
+
 .descriptionBox p {
-    font-size: 20pt;
+    font-size: 24pt;
+    font-weight: 600;
     display: inline;
+}
+
+#projects {
+    margin-left: 20%;
+
+}
+
+#projects h1 {
+    color: var(--primary);
+    font-size: 38pt;
 }
 
 #projectsBar {
     background-color: var(--veryDark);
-    max-width: 50%;
+    max-width: 60%;
+    margin-left: 4%;
 }
 
 .rightBar {
     list-style-type: none;
     float: right;
     display: inline;
-    background-color: var(--veryDark);
     margin-bottom: 0;
 }
 
@@ -111,16 +140,18 @@ a {
 
 #projectContent {
     display: inline-block;
-    min-width: 50%;
+    min-width: 60%;
+    margin-left: 5%;
     min-height: 250px;
     background-color: white;
     white-space: pre-wrap;
     overflow: hidden;
     box-sizing: border-box;
     text-align: left;
-    border: 2px solid #fff;
+    border: 4px solid var(--light);
     padding: 10px;
     padding-top: 0;
+    border-radius: 10px;
 }
 
 #projectContent p {
@@ -134,9 +165,17 @@ a {
 }
 
 .active {
-    background-color: blue;
+    background-color: var(--veryDark);
 }
 
 .inline {
     display: inline;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.veryBold {
+    font-weight: 800;
 }
