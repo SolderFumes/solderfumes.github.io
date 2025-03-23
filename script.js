@@ -106,8 +106,55 @@ let resumeButton = document.getElementById("resume");
 resumeButton.onclick = function() { window.open('https://url.com', '_blank').focus(); };
 
 //add technologies and tools!
-//image resolution should be _____
-
+//image resolution should be 80px!
+let techDiv = document.getElementById("techDiv");
 function addTech(name, link, imageURL) {
-    
+    let cardDiv = document.createElement("div");
+    techDiv.appendChild(cardDiv);
+    cardDiv.setAttribute("class", "card");
+    cardDiv.onclick = function() { window.open(link, '_blank').focus(); };
+
+    let cardImg = document.createElement("img");
+    cardImg.setAttribute("src", imageURL);
+    cardDiv.appendChild(cardImg);
+
+    let cardP = document.createElement("p");
+    cardDiv.appendChild(cardP);
+    cardP.innerHTML = name;
 }
+
+let size = 60;
+
+addTech("C++", "https://isocpp.org/", `https://img.icons8.com/?size=${size}&id=mciovJOS9Auv&format=png&color=000000`);
+addTech("Python", "https://python.org", `https://img.icons8.com/?size=${size}&id=pIJdjOoL6KfU&format=png&color=000000`);
+addTech("BurpSuite", "https://portswigger.net/burp", `https://img.icons8.com/?size=${size}&id=25250&format=png&color=000000`)
+
+// capture mouse movement (for card effect)
+
+// let width = window.innerWidth; //yes these should be declared at the top but I havent used these until now soooo
+// let height = window.innerHeight;
+
+// let x, y;
+
+// let cardToTilt;
+
+// function captureMouse() {
+//     document.addEventListener('mousemove', (event) => {
+//         x = event.clientX - (width / 2);
+//         y = event.clientY - (height / 2);
+//         if (!cardToTilt){
+//             return;
+//         }
+//         tilt(cardToTilt);
+//     });
+// }
+
+// function tilt(card) {
+//     let force = 150; //how much the card moves :) 
+//     rx = (x / width) * force;
+//     ry = (y / height) * -force;
+    
+//     card.setAttribute('style', `transform: rotateY(${rx}deg) rotateX(${ry}deg);`)
+// }
+
+// captureMouse();
