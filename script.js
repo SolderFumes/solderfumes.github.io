@@ -15,12 +15,12 @@ function scrollTo(section) {
 
 
 // TYPING WORDS EFFECT
-const words = ["Computer Science Student", "Penetration Tester", "Developer"];
+const words = ["Computer Science Student", "Cybersecurity Analyst", "Developer", "Penetration Tester", '"Speedcuber"'];
 
 // word <p> tag 
 let wordTag = document.getElementById("word");
 let currentWord = 0; //index of word to be typed
-const delay = 150; // delay between letters
+const delay = 100; // delay between letters
 function typeWord() {
     charArr = words[currentWord].split(""); // char array of the word
     var typeLetter = function() {
@@ -59,6 +59,8 @@ typeWord(); //kick off the typing loop!
 // PROJECT TEXT SWAPPING
 const miningRigButton = document.getElementById("miningRig");
 const linguisticsButton = document.getElementById("linguistics");
+const piClusterButton = document.getElementById("piCluster");
+const cardGameButton = document.getElementById("cardGame");
 
 let activeButton = linguisticsButton;
 let projectText = document.getElementById("projectText");
@@ -76,13 +78,36 @@ function swapProjectText(name) {
             miningRigButton.classList.add("active");
             activeButton = miningRigButton;
             break;
+        case "piCluster":
+            projectText.innerHTML = "WIP";
+            piClusterButton.classList.add("active");
+            activeButton = piClusterButton;
+            break;
+        case "cardGame":
+            projectText.innerHTML = "Card Game";
+            cardGameButton.classList.add("active");
+            activeButton = cardGameButton;
+            break;
         default:
             console.error(`Error finding project named ${name}`);
     }
 }
 
-body.onload = function() { swapProjectText("linguistics") }; //set default project text
+body.onload = function() { swapProjectText("cardGame") }; //set default project text
 
 miningRigButton.onclick = function() { swapProjectText("miningRig"); };
 linguisticsButton.onclick = function() { swapProjectText("linguistics"); };
+piClusterButton.onclick = function() { swapProjectText("piCluster"); };
+cardGameButton.onclick  = function() { swapProjectText("cardGame"); };
 
+// Open my resume when you click the resume button!
+
+let resumeButton = document.getElementById("resume");
+resumeButton.onclick = function() { window.open('https://url.com', '_blank').focus(); };
+
+//add technologies and tools!
+//image resolution should be _____
+
+function addTech(name, link, imageURL) {
+    
+}
