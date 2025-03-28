@@ -19,6 +19,9 @@ a {
     cursor: pointer;
 }
 
+h2 {
+    color: var(--primary);
+}
 
 .navbar {
     background-color: inherit;
@@ -59,7 +62,6 @@ a {
 }
 .titleText {
     padding: 10px;
-    line-height: 50%;
     font-size: 25pt;
     background-color: inherit;
     background: transparent;
@@ -113,9 +115,7 @@ a {
 }
 
 #projectsBar {
-    background-color: var(--veryDark);
-    max-width: 60%;
-    margin-left: 4%;
+    max-width: 78%;
 }
 
 .rightBar {
@@ -129,19 +129,21 @@ a {
     display: inline;
     float: right;
     padding: 5px 5px;
-    margin-bottom: 0;
+    margin-bottom: 1px;
 }
 
 .rightBar li a {
-    padding: 5px 10px;
+    padding: 7px 10px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 #projectContent {
-    display: inline-block;
-    min-width: 60%;
-    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80%;
+    max-width: 80%;
     min-height: 250px;
     background-color: white;
     white-space: pre-wrap;
@@ -154,10 +156,10 @@ a {
     border-radius: 10px;
 }
 
-#projectContent p {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
+#projectContent video, #projectContent img {
+    /* Center video */
+    display: block;
+    margin: 0 auto;
 }
 
 .button {
@@ -217,6 +219,28 @@ a {
     padding: 0 10px;
 }
 
+.footer {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin: 30px;
+}
+
+/* MISC */
+
+.bodyText {
+    color: gray;
+    line-height: 150%;
+    font-size: 15pt;
+    font-weight: 400;
+}
+
+.caption {
+    font-size: 12pt;
+    text-align: center;
+}
+
 .dark {
     background-color: var(--dark);
 }
@@ -249,11 +273,6 @@ a {
     font-size: 38pt;
 }
 
-.bodyText {
-    color: gray;
-    font-size: 15pt;
-    font-weight: 400;
-}
 
 .shadow {
     text-shadow: 3px 3px rgba(0, 0, 0, .2);
